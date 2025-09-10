@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Ideology - Strategy Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- CRT Effect Overlay -->
+    <div class="crt-overlay">
+        <div class="scanlines"></div>
+        <div class="noise"></div>
+        <div class="vignette"></div>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen active">
+        <div class="container">
+            <h1 class="game-title">GLOBAL IDEOLOGY</h1>
+            <div class="subtitle">Strategic Domination Simulator</div>
+            <div class="pip-boy-frame">
+                <div class="screen-content">
+                    <p class="description">
+                        Compete against AI to achieve global domination through strategic influence. 
+                        Manage your Influence Points (IP) and invest wisely to control nations.
+                    </p>
+                    <div class="stats-preview">
+                        <div class="stat-item">
+                            <span class="stat-label">Starting IP:</span>
+                            <span class="stat-value">100</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">IP Generation:</span>
+                            <span class="stat-value">1/sec</span>
+                        </div>
+                    </div>
+                    <button class="pip-button" onclick="showCountrySelection()">BEGIN MISSION</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Country Selection Screen -->
+    <div id="countrySelectionScreen" class="screen">
+        <div class="container">
+            <h2 class="screen-title">SELECT STARTING COUNTRY</h2>
+            <div class="country-grid">
+                <div class="country-card" data-country="utopia" onclick="selectCountry('utopia')">
+                    <div class="country-name">UTOPIA</div>
+                    <div class="country-resistances">
+                        <div class="resistance-item">Military: <span class="resistance-value">?</span></div>
+                        <div class="resistance-item">Economic: <span class="resistance-value">?</span></div>
+                        <div class="resistance-item">Ideology: <span class="resistance-value">?</span></div>
+                        <div class="resistance-item">Diplomatic: <span class="resistance-value">?</span></div>
+                    </div>
+                </div>
+                <div class="country-card" data-country="imperia" onclick="selectCountry('imperia')">
+                    <div class="country-name">IMPERIA</div>
+                    <div class="country-resistances">
+                        <div class="resistance-item">Military: <span class="resistance-value">?</span></div>
+                        <div class="resistance-item">Economic: <span class="resistance-value">?</span></div>
+                        <div class="resistance-item">Ideology: <span class="resistance-value">?</span></div>
+                        <div class="resistance-item">Diplomatic: <span class="resistance-value">?</span></div>
+                    </div>
+                </div>
+                <div class="country-card" data-country="atlantis" onclick="selectCountry('atlantis')">
+                    <div class="country-name">ATLANTIS</div>
+                    <div class="country-resistances">
+                        <div class="resistance-item">Military: <span class="resistance-value">?</span></div>
+                        <div class="resistance-item">Economic: <span class="resistance-value">?</span></div>
+                        <div class="resistance-item">Ideology: <span class="resistance-value">?</span></div>
+                        <div class="resistance-item">Diplomatic: <span class="resistance-value">?</span></div>
+                    </div>
+                </div>
+                <div class="country-card locked" data-country="pinguinia">
+                    <div class="country-name">PINGUINIA</div>
+                    <div class="lock-icon">🔒</div>
+                    <div class="unlock-cost">Cost: 500 IP</div>
+                </div>
+            </div>
+            <button class="pip-button" id="confirmSelection" onclick="startGame()" disabled>CONFIRM SELECTION</button>
+        </div>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div id="gameScreen" class="screen">
+        <div class="game-header">
+            <div class="ip-display">
+                <span class="ip-label">IP:</span>
+                <span class="ip-value" id="playerIP">100</span>
+                <span class="ip-generation">(+<span id="ipGenRate">1</span>/sec)</span>
+            </div>
+            <div class="ai-display">
+                <span class="ai-label">AI IP:</span>
+                <span class="ai-value" id="aiIP">100</span>
+            </div>
+        </div>
+
+        <div class="game-content">
+            <!-- Countries Panel -->
+            <div class="countries-panel">
+                <h3 class="panel-title">COUNTRIES</h3>
+                <div class="countries-list" id="countriesList">
+                    <!-- Countries will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Upgrades Panel -->
+            <div class="upgrades-panel">
+                <h3 class="panel-title">UPGRADES</h3>
+                <div class="upgrade-tabs">
+                    <button class="upgrade-tab active" data-branch="ideology">IDEOLOGY</button>
+                    <button class="upgrade-tab" data-branch="military">MILITARY</button>
+                    <button class="upgrade-tab" data-branch="economic">ECONOMIC</button>
+                    <button class="upgrade-tab" data-branch="diplomatic">DIPLOMATIC</button>
+                    <button class="upgrade-tab locked" data-branch="religion">RELIGION 🔒</button>
+                    <button class="upgrade-tab locked" data-branch="terrorism">TERRORISM 🔒</button>
+                </div>
+                <div class="upgrade-content" id="upgradeContent">
+                    <!-- Upgrade content will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Shop Panel -->
+            <div class="shop-panel">
+                <h3 class="panel-title">SHOP</h3>
+                <div class="shop-items">
+                    <div class="shop-item">
+                        <div class="shop-item-name">Unlock Religion Branch</div>
+                        <div class="shop-item-cost">Cost: 1000 IP</div>
+                        <button class="shop-buy-btn" onclick="buyShopItem('religion')">BUY</button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="shop-item-name">Unlock Terrorism Branch</div>
+                        <div class="shop-item-cost">Cost: 1000 IP</div>
+                        <button class="shop-buy-btn" onclick="buyShopItem('terrorism')">BUY</button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="shop-item-name">Unlock Pinguinia</div>
+                        <div class="shop-item-cost">Cost: 500 IP</div>
+                        <button class="shop-buy-btn" onclick="buyShopItem('pinguinia')">BUY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Country Influence Modal -->
+    <div id="influenceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalCountryName">Country Name</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="country-info">
+                    <div class="influence-display">
+                        <div class="influence-bar">
+                            <div class="influence-fill player" id="playerInfluence"></div>
+                            <div class="influence-fill ai" id="aiInfluence"></div>
+                        </div>
+                        <div class="influence-labels">
+                            <span class="player-label">PLAYER</span>
+                            <span class="ai-label">AI</span>
+                        </div>
+                    </div>
+                    <div class="resistances">
+                        <h4>Resistances:</h4>
+                        <div class="resistance-grid" id="resistanceGrid">
+                            <!-- Resistances will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                <div class="influence-actions">
+                    <h4>Invest IP:</h4>
+                    <div class="influence-types">
+                        <button class="influence-btn" data-type="military" onclick="investInfluence('military')">MILITARY</button>
+                        <button class="influence-btn" data-type="economic" onclick="investInfluence('economic')">ECONOMIC</button>
+                        <button class="influence-btn" data-type="ideology" onclick="investInfluence('ideology')">IDEOLOGY</button>
+                        <button class="influence-btn" data-type="diplomatic" onclick="investInfluence('diplomatic')">DIPLOMATIC</button>
+                    </div>
+                    <div class="investment-input">
+                        <input type="number" id="investmentAmount" min="1" max="1000" value="10">
+                        <button class="pip-button" onclick="executeInvestment()">INVEST</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upgrade Modal -->
+    <div id="upgradeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="upgradeModalTitle">Upgrade</h3>
+                <button class="close-btn" onclick="closeUpgradeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="upgrade-info" id="upgradeInfo">
+                    <!-- Upgrade info will be populated by JavaScript -->
+                </div>
+                <div class="upgrade-actions">
+                    <button class="pip-button" id="upgradeBuyBtn" onclick="buyUpgrade()">PURCHASE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
