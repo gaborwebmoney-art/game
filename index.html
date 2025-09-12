@@ -1,6 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Ideology</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="game-root">
+    <header class="gi-header">
+      <div class="title">GLOBAL IDEOLOGY</div>
+      <div class="sub">Retro strategy simulation</div>
+    </header>
+
+    <section class="gi-topbar">
+      <div class="stat"><span>Turn</span><strong id="turn">1</strong></div>
+      <div class="stat"><span>Influence Points</span><strong id="ip">0</strong></div>
+      <div class="stat"><span>AI Support</span><strong id="ai-support">0%</strong></div>
+      <div class="stat"><span>Your Support</span><strong id="player-support">0%</strong></div>
+      <div class="actions-inline">
+        <button id="end-turn" class="btn primary">End Turn</button>
+        <button id="reset-game" class="btn">New Game</button>
+      </div>
+    </section>
+
+    <main class="gi-main">
+      <aside class="panel left">
+        <h2>World</h2>
+        <div id="countries"></div>
+      </aside>
+
+      <section class="panel center">
+        <h2>Operations</h2>
+        <div class="operation-row">
+          <label for="country-select">Target</label>
+          <select id="country-select"></select>
+        </div>
+        <div class="buttons-grid">
+          <button id="act-influence" class="btn">Influence (1 IP)</button>
+          <button id="act-propaganda" class="btn">Propaganda (3 IP)</button>
+          <button id="act-espionage" class="btn" disabled>Espionage (5 IP)</button>
+        </div>
+        <div class="h-sep"></div>
+        <h3>Upgrades</h3>
+        <div id="upgrades" class="upgrades"></div>
+      </section>
+
+      <aside class="panel right">
+        <h2>Intelligence Log</h2>
+        <ul id="log" class="log"></ul>
+      </aside>
+    </main>
+
+    <footer class="gi-footer">
+      <div id="status" class="status-line">Ready.</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <noscript>Enable JavaScript to play.</noscript>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Ideology - Strategy Game</title>
