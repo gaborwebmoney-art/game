@@ -1325,3 +1325,138 @@ Alright, let’s build the **full combat script** for the **Timekeeper Phantom**
 ---
 
 👉 Next step, I can write **a turn-by-turn sample fight** (player vs Phantom) to show how the mechanics play out in practice — want me to do that?
+Perfect! Let’s create a **full 20-turn sample fight** using the **correct turn-based mechanic** where attacker/blocker roles alternate. I’ll include **Phantom special moves, dialogue lines, and player item use** to illustrate a complete, playable encounter.
+
+---
+
+# 🕰️ **Timekeeper Phantom – Full 20-Turn Sample Fight**
+
+## 📊 **Setup**
+
+* **Player HP**: 100
+* **Phantom HP**: 150
+* Player has 1 × Acqua Gassata (heal + Mighty Burp)
+* Phantom starts **first as attacker**.
+* Damage:
+
+  * Basic attack = 10–15
+  * Pendulum Sweep (HP < 80%) = 20–25
+* Block reduces damage by 30%.
+
+---
+
+## **Turn-by-Turn Flow**
+
+### **Turn 1 – Phantom attacks, Player blocks**
+
+* **Attack**: Body → **Dialogue**: *“All who enter Big Ben become prisoners of time!”*
+* **Block**: Body → success → 12 → 8 damage
+* **HP**: Player 92 / Phantom 150
+
+### **Turn 2 – Player attacks, Phantom blocks**
+
+* **Attack**: Head
+* **Block**: Body → attack hits → 15 damage
+* **HP**: Player 92 / Phantom 135
+
+### **Turn 3 – Phantom attacks, Player blocks**
+
+* **Attack**: Legs → *“Tick…tock… tick…tock…”*
+* **Block**: Head → attack hits → 10 damage
+* **HP**: Player 82 / Phantom 135
+
+### **Turn 4 – Player attacks, Phantom blocks**
+
+* **Attack**: Body
+* **Block**: Body → success → 12 → 8 damage
+* **HP**: Player 82 / Phantom 127
+
+### **Turn 5 – Phantom attacks, Player blocks**
+
+* **Attack**: Pendulum Sweep → Body → *“Feel the swing of time!”*
+* **Block**: Head → full damage → 22
+* **HP**: Player 60 / Phantom 127
+
+### **Turn 6 – Player attacks, Phantom blocks**
+
+* **Uses Acqua Gassata** → heals 5 HP → Player 65 → Mighty Burp triggers → Phantom skips next turn
+* **Attack**: Legs
+* **Block**: Head → full damage 12
+* **HP**: Phantom 115
+
+### **Turn 7 – Phantom misses (Mighty Burp)**
+
+### **Turn 8 – Player attacks, Phantom blocks**
+
+* **Attack**: Body
+* **Block**: Legs → attack hits → 18
+* **HP**: Phantom 97
+
+### **Turn 9 – Phantom attacks, Player blocks**
+
+* **Attack**: Head → *“Your time is running out, tourist!”*
+* **Block**: Body → hit → 15
+* **HP**: Player 50
+
+### **Turn 10 – Player attacks, Phantom blocks**
+
+* **Attack**: Head
+* **Block**: Head → success → 12 → 8
+* **HP**: Phantom 89
+
+### **Turn 11 – Phantom attacks, Player blocks**
+
+* **Attack**: Legs
+* **Block**: Legs → success → 12 → 8
+* **HP**: Player 42
+
+### **Turn 12 – Player attacks, Phantom blocks**
+
+* **Attack**: Body
+* **Block**: Head → hit → 16
+* **HP**: Phantom 73
+
+### **Turn 13 – Phantom attacks, Player blocks**
+
+* **Attack**: Pendulum Sweep → Body → *“Time bends to me!”*
+* **Block**: Legs → hit → 22
+* **HP**: Player 20
+
+### **Turn 14 – Player attacks, Phantom blocks**
+
+* **Attack**: Legs
+* **Block**: Body → hit → 14
+* **HP**: Phantom 59
+
+### **Turn 15 – Phantom attacks, Player blocks**
+
+* **Attack**: Head
+* **Block**: Head → success → 13 → 9
+* **HP**: Player 11
+
+### **Turn 16 – Player attacks, Phantom blocks**
+
+* **Attack**: Body
+* **Block**: Legs → hit → 15
+* **HP**: Phantom 44
+
+### **Turn 17 – Phantom attacks, Player blocks**
+
+* **Attack**: Pendulum Sweep → Body → *“You cannot stop the pendulum!”*
+* **Block**: Head → hit → 22
+* **HP**: Player 0 → Player defeated, respawns outside tower
+
+---
+
+✅ **Observations**
+
+* Alternating attack/block makes **timing and guessing block locations essential**.
+* Items like **Acqua Gassata** give both healing and strategic advantage (Mighty Burp).
+* Phantom’s **Pendulum Sweep** creates tension and encourages player to anticipate.
+* Humor and dialogue can break up repetitive turns.
+
+---
+
+If you want, I can **also make a “Player Wins” version of this 20-turn sequence**, showing **how a skilled player can defeat Phantom** with blocks, combos, and item use, which will act as a reference for **balance and design**.
+
+Do you want me to do that?
