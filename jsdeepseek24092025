@@ -1,0 +1,235 @@
+// Add this function to show upgrade descriptions
+function openUpgradeModal(upgrade, branch) {
+    if (!elements['country-name'] || !elements['country-description']) return;
+    
+    // Temporarily repurpose the country modal for upgrade info
+    elements['country-name'].textContent = upgrade.name;
+    elements['country-description'].textContent = `Cost: ${upgrade.cost} IP | Branch: ${branch.charAt(0).toUpperCase() + branch.slice(1)}`;
+    
+    // Hide unnecessary elements for upgrade info
+    const stats = ['military', 'economic', 'diplomatic', 'ideological'];
+    stats.forEach(stat => {
+        const element = elements[`stat-${stat}`];
+        if (element) {
+            element.parentElement.style.display = 'none';
+        }
+    });
+    
+    const actionsContainer = elements['country-actions-container'];
+    const upgradeBtn = elements['upgrade-country-btn'];
+    
+    if (actionsContainer) actionsContainer.style.display = 'none';
+    if (upgradeBtn) upgradeBtn.style.display = 'none';
+    
+    // Show requirements in the modal
+    const countryStats = elements['country-stats'];
+    if (countryStats) {
+        countryStats.innerHTML = '';
+        countryStats.style.display = 'block';
+        
+        if (upgrade.requires.length > 0) {
+            const reqHeader = document.createElement('p');
+            reqHeader.textContent = 'Requirements:';
+            reqHeader.style.fontWeight = 'bold';
+            countryStats.appendChild(reqHeader);
+            
+            upgrade.requires.forEach(req => {
+                const reqItem = document.createElement('p');
+                reqItem.textContent = `• ${req}`;
+                reqItem.style.marginLeft = '10px';
+                countryStats.appendChild(reqItem);
+            });
+        } else {
+            const noReq = document.createElement('p');
+            noReq.textContent = 'No requirements';
+            countryStats.appendChild(noReq);
+        }
+        
+        // Add upgrade effect description
+        const effectHeader = document.createElement('p');
+        effectHeader.textContent = 'Effects:';
+        effectHeader.style.fontWeight = 'bold';
+        effectHeader.style.marginTop = '10px';
+        countryStats.appendChild(effectHeader);
+        
+        const effectDesc = document.createElement('p');
+        effectDesc.textContent = getUpgradeEffectDescription(upgrade.name);
+        effectDesc.style.marginLeft = '10px';
+        countryStats.appendChild(effectDesc);
+    }
+    
+    // Change modal title to indicate it's upgrade info
+    const modalTitle = elements['country-name'];
+    if (modalTitle) {
+        modalTitle.textContent = `Upgrade: ${upgrade.name}`;
+    }
+    
+    openModal(elements['country-modal']);
+}
+
+// Add this function to describe upgrade effects
+function getUpgradeEffectDescription(upgradeName) {
+    const effects = {
+        'Charismatic leadership': 'Increases influence power multiplier by 20%',
+        'Doctrinal purity': 'Increases IP generation multiplier by 30%',
+        'Social engineering': 'Further enhances ideological influence capabilities',
+        'Utopia': 'Maximum ideological influence power',
+        'Military Parade': 'Enables military influence operations',
+        'Cyber Operations': 'Reduces AI IP generation by 10%',
+        'Sovereign Intervention': 'Allows direct military intervention',
+        'Bombing infrastructure': 'Significantly reduces target country resistances',
+        'Embassy': 'Enables diplomatic influence operations',
+        'Regional Summit': 'Improves diplomatic influence effectiveness',
+        'Sanctions Hammer': 'Allows economic pressure on target countries',
+        'Alliance Breaker': 'Can break AI alliances with countries',
+        'Trade Deals': 'Increases IP generation rate by 0.5',
+        'Resource Leverage': 'Increases influence power multiplier by 15%',
+        'Monopolization': 'Gains economic dominance over influenced countries',
+        'Government Bribe': 'Directly influences government decisions',
+        'Word of God': 'Enables religious influence operations',
+        'Church of Holy Molly': 'Establishes religious institutions',
+        'Messiah': 'Significantly boosts religious influence power',
+        'Believe!': 'Maximum religious conversion capabilities',
+        'Dormant cell': 'Enables covert terrorist operations',
+        'Asset degradation': 'Weakens target country infrastructure',
+        'Operation Cyclone': 'Major terrorist campaign capabilities',
+        'Hybrid threat': 'Combines terrorist and conventional operations'
+    };
+    
+    return effects[upgradeName] || 'Provides strategic advantages for global influence';
+}
+
+// Update the renderUpgrades function to include info buttons
+function renderUpgrades() {
+    if (!elements['upgrade-tree-container']) return;
+    
+    elements['upgrade-tree-container'].innerHTML = '';
+    
+    for (const branch in gameState.upgrades) {
+        const branchEl = document.createElement('div');
+        branchEl.classList.add('upgrade-branch');
+        
+        const branchTitle = document.createElement('h3');
+        branchTitle.textContent = branch.charAt(0).toUpperCase() + branch.slice(1);
+        branchEl.appendChild(branchTitle);
+        
+        gameState.upgrades[branch].forEach(upgrade => {
+            const upgradeEl = document.createElement('div');
+            upgradeEl.classList.add('upgrade-item');
+            upgradeEl.classList.add(upgrade.active ? 'active' : 'inactive');
+            
+            const upgradeName = document.createElement('p');
+            upgradeName.textContent = upgrade.name;
+            upgradeEl.appendChild(upgradeName);
+            
+            const costEl = document.createElement('span');
+            costEl.textContent = `Cost: ${upgrade.cost} IP`;
+            upgradeEl.appendChild(costEl);
+            
+            // Add info button for upgrades
+            const infoBtn = document.createElement('button');
+            infoBtn.classList.add('info-btn');
+            infoBtn.textContent = 'i';
+            infoBtn.style.position = 'absolute';
+            infoBtn.style.top = '5px';
+            infoBtn.style.right = '5px';
+            infoBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openUpgradeModal(upgrade, branch);
+            });
+            upgradeEl.appendChild(infoBtn);
+            
+            // Show requirements
+            if (upgrade.requires.length > 0) {
+                const reqEl = document.createElement('small');
+                reqEl.textContent = `Requires: ${upgrade.requires.join(', ')}`;
+                reqEl.style.display = 'block';
+                reqEl.style.marginTop = '5px';
+                upgradeEl.appendChild(reqEl);
+            }
+            
+            const buyBtn = document.createElement('button');
+            buyBtn.textContent = upgrade.active ? 'Active' : 'Buy';
+            buyBtn.disabled = upgrade.active || gameState.playerIP < upgrade.cost;
+            
+            if (!upgrade.active) {
+                // Check if requirements are met
+                const allUpgrades = Object.values(gameState.upgrades).flat();
+                const requirementsMet = upgrade.requires.every(req => {
+                    const requiredUpgrade = allUpgrades.find(u => u.name === req);
+                    return requiredUpgrade && requiredUpgrade.active;
+                });
+                
+                if (!requirementsMet) {
+                    buyBtn.disabled = true;
+                    buyBtn.title = 'Requirements not met';
+                }
+            }
+            
+            buyBtn.onclick = () => buyUpgrade(branch, upgrade.name);
+            upgradeEl.appendChild(buyBtn);
+            
+            branchEl.appendChild(upgradeEl);
+        });
+        
+        elements['upgrade-tree-container'].appendChild(branchEl);
+    }
+}
+
+// Also update the openCountryModal function to reset the modal when used for countries
+function openCountryModal(country, isInfoOnly = false) {
+    if (!elements['country-name'] || !elements['country-description']) return;
+    
+    elements['country-name'].textContent = country.name;
+    elements['country-description'].textContent = country.description;
+    
+    // Reset stats display
+    const stats = ['military', 'economic', 'diplomatic', 'ideological'];
+    stats.forEach(stat => {
+        const element = elements[`stat-${stat}`];
+        if (element) {
+            element.parentElement.style.display = 'block';
+            element.textContent = country[stat];
+            element.style.color = getResistanceColor(country[stat]);
+        }
+    });
+    
+    const countryStats = elements['country-stats'];
+    if (countryStats) {
+        countryStats.style.display = 'grid'; // Reset to original display
+    }
+    
+    // Update player IP in modal
+    if (elements['modal-player-ip']) {
+        elements['modal-player-ip'].textContent = gameState.playerIP.toFixed(2);
+    }
+    
+    const actionsContainer = elements['country-actions-container'];
+    const upgradeBtn = elements['upgrade-country-btn'];
+    
+    if (isInfoOnly) {
+        if (actionsContainer) actionsContainer.style.display = 'none';
+        if (upgradeBtn) upgradeBtn.style.display = 'none';
+    } else {
+        if (actionsContainer) actionsContainer.style.display = 'block';
+        if (upgradeBtn) {
+            upgradeBtn.style.display = country.name === gameState.playerCountry ? 'block' : 'none';
+            upgradeBtn.onclick = () => {
+                openModal(elements['upgrade-modal']);
+                renderUpgrades();
+            };
+        }
+    }
+    
+    // Set up influence buttons
+    const influenceBtns = document.querySelectorAll('#action-buttons button');
+    influenceBtns.forEach(btn => {
+        btn.onclick = () => influenceCountry(
+            country.name, 
+            btn.dataset.type, 
+            parseInt(elements['ip-amount'].value || 40)
+        );
+    });
+    
+    openModal(elements['country-modal']);
+}
