@@ -992,3 +992,336 @@ Brilliant 😄 You got it — let’s make Chelsea full of NPCs who sound like *
 ---
 
 👉 Do you want me to also write **special Chelsea-exclusive lines** for *Ede Udvaros* and *Imre Csinar* so they comment uniquely when they appear here?
+
+Perfect starting point — let’s **zoom in on Heathrow Airport** and flesh it out as a *tutorial hub + story trigger*. This will set the tone, teach mechanics, and deliver the “passport stolen” inciting incident.
+
+---
+
+# 🛫 **Location 1: Heathrow Airport (Tutorial Area)**
+
+## 🎮 **Game Loop in Airport**
+
+1. **Arrival Scene (Cutscene)**
+
+   * Protagonist steps off the plane (slightly hungover).
+   * Intro dialogue establishes he’s a Hungarian tourist, eager to explore London.
+   * Teasing hint of forgotten girlfriend (she’s briefly seen behind him in plane flashback, but player doesn’t notice significance).
+
+2. **Exploration Phase**
+
+   * Player learns **movement**, **interaction with NPCs**, and **basic UI**.
+   * Luggage hall, arrival lounge, and a small duty-free shopping area can be explored.
+   * First mini-quest (“Lost Suitcase Lady”) introduces fetch mechanics.
+
+3. **First Combat Encounter**
+
+   * **Pickpocket event**: Player chases thief through baggage claim → tutorial fight vs petty thief.
+   * Learn **attack, block, weapon pickup (chair/umbrella)**.
+   * When defeated, thief reveals: *“I gave passport to someone powerful in the city!”*
+
+4. **Tutorial Wrap-Up**
+
+   * Guards arrive after fight. They explain London’s dangers.
+   * Player gets **10 coins** and is told to head to **Big Ben/Westminster** for first clue.
+   * Optional: Pub in the lounge (first beer opportunity for *Pub Crawl Quest*).
+
+---
+
+## 📌 **Key Events**
+
+* **Passport Theft**: Main inciting incident.
+* **First Side Quest**: Help the old lady find her suitcase (reward: 10 coins).
+* **First Shop/Vending Machine**: Acqua Gassata available for purchase.
+* **Special Character Intros**:
+
+  * **Ede Udvaros** spawns near duty-free shop, offering a beer.
+  * **Imre Csinar** appears ONLY if player passes out (if they drink with Ede here and black out → Imre appears after).
+
+---
+
+## 👥 **Key Characters**
+
+* **Petty Thief / Baggage Bandit (Mini-Boss)**
+
+  * Weak, tutorial fight.
+  * Drops clue: “Powerful in the city took your passport.”
+* **Security Guards**
+
+  * Give player warnings, light comic relief (*“Welcome to London. Watch your wallet.”*).
+* **Old Lady with Lost Suitcase**
+
+  * First optional quest.
+  * Reward = coins, builds trust in helping NPCs.
+* **Duty-Free Shop Clerk**
+
+  * Sells Acqua Gassata (tutorial on consumables).
+* **Ede Udvaros & Imre Csinar**
+
+  * Introduced here so player recognizes them later.
+
+---
+
+## 🏟️ **Other Details**
+
+* **Tutorial Mechanics Covered**:
+
+  * Movement (follow signs).
+  * Talking to NPCs (speech bubble icon).
+  * Picking up objects (umbrella/rolling suitcase as first weapon).
+  * Combat basics (attack, block, targeting head/body/legs).
+  * Item use (heal with vending machine drink).
+* **Environment Flavor**:
+
+  * Background announcements (“Flight to Budapest delayed. Again.”).
+  * Tourists rushing, kids crying, guards patrolling.
+  * Posters advertising London landmarks (foreshadowing upcoming locations).
+* **Optional Pub**: “The Flying Pint” — first chance to drink for *Pub Crawl Quest*.
+
+---
+
+## 📊 **Game Loop Summary**
+
+* **Explore → Talk → Mini-quest → Fight → Reveal story clue → Move to next location.**
+* Tutorial structured so player leaves Heathrow with:
+
+  * **10 coins** (from old lady).
+  * **Knowledge of combat basics** (from thief fight).
+  * **Side quest hooks** (Pub Crawl, Ede & Imre interactions).
+  * **Clear story motivation**: Get passport back → Big Ben clue.
+
+---
+
+👉 Do you want me to also design the **exact tutorial fight mechanics** against the Baggage Bandit (moveset, hit points, how block/attack choices are explained step by step)?
+Alright, let’s zoom in on **Big Ben / Westminster** as the **first full quest location** after Heathrow. This is where the player leaves the “tutorial bubble” and steps into the real game loop: exploration, side quests, combat, puzzles, and lore.
+
+---
+
+# 🕰️ **Location 2: Big Ben / Westminster**
+
+## 🎮 **Game Loop in Big Ben**
+
+1. **Arrival Scene (Cutscene)**
+
+   * Player arrives at Westminster Pier, sees Big Ben towering above.
+   * Crowds of tourists, buskers, and street hustlers give the area a chaotic but vibrant feel.
+   * Hero monologues: *“If thief said ‘powerful in city,’ maybe big clock tower have big clue…”*
+
+2. **Exploration Phase**
+
+   * Player explores square, talks to NPCs, and can find side quests.
+   * Optional interactions with performers, tourists, and trivia NPCs.
+   * Environmental humor: pigeons everywhere, camera flashes, pickpockets lurking.
+
+3. **Quest Phase**
+
+   * **Main Objective**: Investigate Big Ben for clue about passport.
+   * Street performer teaches **combo attack** if player pays 5 coins.
+   * Historian NPC gives **London trivia quiz** → rewards lore & a health potion.
+   * Mini-side quest: Collect 3 lost tourist guidebooks scattered in Westminster Square.
+
+4. **Boss Encounter**
+
+   * Inside clock tower at night → **Timekeeper Phantom** awakens.
+   * Boss fight teaches player to properly block & time attacks.
+   * Drops **Fake Passport** (misleading clue) + **Map of London** with new destinations marked.
+
+5. **Resolution**
+
+   * Guards outside clock tower see the ruckus but don’t intervene.
+   * Player leaves area with map, now free to head to Buckingham Palace.
+
+---
+
+## 📌 **Key Events**
+
+* **Street Performer Deal** → teaches combat combo (e.g. “Head-Body-Legs chain = bonus damage”).
+* **Historian Trivia Side Quest** → 3-question London history test, reward: healing item.
+* **Tourist Guidebook Quest** → encourages exploration, reward: coins.
+* **Boss Fight vs Timekeeper Phantom** → climactic first challenge, ends with fake passport + London map.
+
+---
+
+## 👥 **Key Characters**
+
+* **Street Performer** (NPC trainer)
+
+  * Dressed as Shakespeare or a silver-painted statue man.
+  * Teaches new combat move if paid.
+  * Example line: *“Coins for art, mate? I’ll teach ya how to fight like Hamlet gone wild!”*
+
+* **Historian**
+
+  * Elderly, dusty-looking lecturer.
+  * Asks trivia like: *“What year did the fire of London burn half the city?”*
+  * Rewards player with potion if answered correctly.
+
+* **Lost Tourist Couple**
+
+  * Side quest givers → guidebooks fetch quest.
+  * Reward = 10–15 coins.
+
+* **Timekeeper Phantom (Boss)**
+
+  * Ethereal ghost knight carrying a giant clock hand as a sword.
+  * First “serious” boss after tutorial.
+  * Moveset revolves around **time**:
+
+    * *Clock Strike* → heavy hit.
+    * *Skip a Turn* → makes player lose one action.
+    * *Hasten* → gives Phantom 2 turns in a row.
+
+---
+
+## 🏟️ **Other Details**
+
+* **Environment Flavor**:
+
+  * Tourists snapping photos.
+  * Pigeons swooping down for crumbs.
+  * Guards patrolling, mostly ignoring chaos.
+* **Optional Pub**: “The Westminster Arms” — second pub for *Pub Crawl Quest*.
+* **Hidden Joke**: If player looks at the clock long enough → achievement *“Wasting Time”*.
+
+---
+
+## 📊 **Game Loop Summary**
+
+* **Explore → NPC interactions & side quests → Climb clock tower → Boss fight → Clue (fake passport + map) → Next location unlocked (Buckingham Palace).**
+
+---
+
+👉 Do you want me to also write the **exact dialogue set for the Timekeeper Phantom boss fight** (intro lines, mid-fight taunts, defeat lines)?
+Perfect 👌 Let’s give the **Timekeeper Phantom** a proper personality and make the fight memorable. Since this is the **first major boss**, his dialogue should be:
+
+* **Ominous but slightly humorous** (to fit the game’s tone).
+* Centered on **time, clocks, and London history**.
+* Short, punchy lines that can be triggered at **intro, mid-fight, and defeat**.
+
+---
+
+# ⏳ **Timekeeper Phantom – Boss Dialogue**
+
+### 🎬 **Intro Lines (when fight starts)**
+
+1. *“You dare disturb the ticking of destiny?”*
+2. *“All who enter Big Ben become prisoners of time!”*
+3. *“The hands of the clock strike your doom.”*
+
+---
+
+### ⚔️ **Mid-Fight Taunts** (trigger randomly during battle)
+
+1. *“Your time runs short, tourist!”*
+2. *“Every second you waste is another strike against you.”*
+3. *“I have watched centuries pass… and you are but a blink.”*
+4. *“Block if you must… but you cannot block eternity!”*
+5. *“Tick… tock… tick… tock… feels slower now, doesn’t it?”*
+
+---
+
+### 🕳️ **Special Attack Lines**
+
+* When using *Skip a Turn*:
+  *“Time stands still for you, not for me!”*
+* When using *Hasten*:
+  *“The clock strikes twice!”*
+
+---
+
+### 💀 **Defeat Lines**
+
+1. *“Time… even I could not… escape it…”*
+2. *“Your clock… has only just begun to tick…”*
+3. *“The passport you seek… is but a shadow…”*
+
+---
+
+### 🎁 **Post-Fight Loot Scene**
+
+* Drops **Fake Passport** (looks real but useless).
+* Also gives **Map of London** (reveals Buckingham Palace, Chelsea, British Museum).
+* Short narration: *“The Phantom fades into gears and dust. A false passport slips from its cloak, and a glowing map appears.”*
+
+---
+
+👉 I can also design his **fight mechanics script** (HP, attacks, turn order examples, when special moves trigger) so you’ll have a **step-by-step combat design**. Want me to do that next?
+Alright, let’s build the **full combat script** for the **Timekeeper Phantom** so you can drop it straight into your design doc. This will define his HP, damage, turn order, abilities, and AI flow.
+
+---
+
+# ⏳ **Boss Fight Script – Timekeeper Phantom**
+
+## 📊 **Stats**
+
+* **HP**: \~150 (tougher than tutorial thief, but not overwhelming).
+* **Base Damage**: 10–15 per hit.
+* **Defense**: Medium (can be blocked effectively).
+* **Speed**: Boss starts first in this fight (as per your rule).
+
+---
+
+## 🎮 **Turn Order Rules**
+
+* **Boss always starts** (unless special modifier is active later in game, e.g. Imre Csinar hug).
+* Player attacks first only against normal enemies.
+* Player chooses **Attack (Head/Body/Legs)** or **Defend (Head/Body/Legs)**.
+* Block reduces damage by 30%.
+
+---
+
+## ⚔️ **Moveset**
+
+1. **Clock Strike (Basic Attack)**
+
+   * Targets Head/Body/Legs randomly.
+   * Deals 10–15 damage.
+   * Standard move, used 60% of the time.
+
+2. **Skip a Turn (Special Control Move)**
+
+   * Player loses next turn.
+   * Dialogue: *“Time stands still for you, not for me!”*
+   * Cooldown: Can only be used once every 4 turns.
+
+3. **Hasten (Double Turn Buff)**
+
+   * Phantom immediately takes an **extra action**.
+   * Dialogue: *“The clock strikes twice!”*
+   * Cooldown: Once every 3 turns.
+
+4. **Pendulum Sweep (Heavy Attack)**
+
+   * Uses giant clock hand sword to sweep across body.
+   * Targets **Body only** (blockable).
+   * Deals 20–25 damage.
+   * Used when HP < 50%.
+
+---
+
+## 🧠 **AI Behavior Script**
+
+* **HP > 100**: Mostly Clock Strike (basic attacks).
+* **HP 100–50**: Starts using Skip a Turn + Hasten more frequently.
+* **HP < 50**: Unlocks Pendulum Sweep, increases chance of using special moves.
+
+---
+
+## 🎬 **Phases & Story Beat**
+
+* **Phase 1 (Full HP)**: Phantom is testing the hero — dialogue about time, destiny.
+* **Phase 2 (Mid HP)**: Boss begins to show supernatural powers, taunting with “time” mechanics.
+* **Phase 3 (Low HP)**: Grows desperate, spamming Pendulum Sweep and time-bending abilities.
+* **Defeat**: Dramatic collapse into clock gears & dust → drops Fake Passport + Map.
+
+---
+
+## ⚖️ **Balance Notes**
+
+* **First major boss**: Should feel threatening but fair.
+* Player is still learning combat → reward timing and blocking.
+* Items like Acqua Gassata (Mighty Burp) can be a lifesaver here.
+* If player loses → respawns outside clock tower, can retry immediately.
+
+---
+
+👉 Next step, I can write **a turn-by-turn sample fight** (player vs Phantom) to show how the mechanics play out in practice — want me to do that?
