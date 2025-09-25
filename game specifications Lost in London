@@ -220,11 +220,6 @@ o	Time skip forward (to simulate hangover).
 •	Negative Incentive: Risk of slowed movement + pass-out coin loss.
 •	Player Choice: Use pubs sparingly for buffs, or fully commit to the global quest for Beer Mug + cutscene rewards.
  
-✅ This way, the Pub Crawl adds flavor, humor, and a meta-challenge, while staying balanced in gameplay terms.
- 
-👉 Do you want me to rebuild the text-based flowchart and integrate both Brick Lane quests and the Pub Crawl global quest so you have one unified design doc?
-That’s a fantastic idea — Ede Udvaros becomes a recurring comic-tragic side character who’s tied to your Pub Crawl theme but with his own unique meta-quest. He’s like a walking “temptation NPC” who tests the player’s risk–reward decisions. Let’s design him:
- 
 🍺 Special Character: Ede Udvaros
 Role in Game:
 •	Wandering Hungarian expat, always hanging out near pubs or hidden corners.
@@ -265,9 +260,6 @@ o	After the cutscene, Ede passes out again on the floor (non-participating ally)
 •	Encourages players to explore and interact in every zone.
 •	Offers a unique alternative reward separate from the Pub Crawl quest.
 •	Gives payoff for a seemingly “bad” choice (accepting Ede’s drinks).
- 
-👉 Do you want me to weave Ede Udvaros into the flowchart/map (as a recurring optional NPC thread that ties across all locations), or should I write him up like a mini quest log (detailing each place he appears and what he says)?
-Perfect 👌 You’ve just created the second eccentric ally for your Lost in London side character roster — a strange but powerful payoff for choosing to go along with his bizarre behavior. Let’s formalize him just like we did with Ede Udvaros:
  
 🤗 Special Character: Imre Csinár
 Role in Game:
@@ -310,9 +302,6 @@ o	Afterward, Imre vanishes with no explanation.
 •	Provides a different type of risk–reward choice than Ede Udvaros: instead of alcohol damage, it’s charisma penalties.
 •	Makes blackouts more interesting (they unlock his encounters instead of just being punishments).
 •	Final payoff synergizes well if the player unlocked both Ede & Imre assists → boss fight starts with -30% HP and immobilization.
- 
-👉 Do you want me to also add funny mini-dialogues for each of Imre’s hugs (so it doesn’t feel repetitive), like little surreal one-liners he whispers after hugging?
-Perfect, thanks for clarifying! That actually adds extra flavor and humor to your game — players will notice the contrast between their names, appearances, and accents, making both characters more memorable. Let’s adjust their profiles accordingly:
  
 🌟 Special Characters (Updated)
 1️⃣ Ede Udvaros
@@ -400,15 +389,6 @@ Topics: drinking, hugging, Bitcoin, London landmarks, quirky wisdom
 •	Ede’s Borat-style lines are funnier if paired with exaggerated gestures (arm flails, big cheers).
 •	Imre’s lines are calmer, slightly surreal, philosophical—contrast keeps both characters distinct.
 •	Could also mix in mini Easter egg lines if the player drinks with Ede or hugs Imre in that location.
- 
-If you want, I can create a full dialogue table for all locations with 5 lines per character per location, mixing:
-•	Default banter
-•	Pub crawl commentary
-•	Blackout/hug-specific lines
-•	Mini-jokes about food, landmarks, or football
-This would give you ready-to-use lines for every spawn, fully contextualized.
-Do you want me to do that next?
-Perfect 😄 Let’s create a full location-specific dialogue table for both Ede Udvaros and Imre Csinár, including default banter, pub crawl commentary, blackout/hug references, and mini-jokes about food, landmarks, or football. I’ll structure it in a table so it’s ready for implementation.
  
 🎭 Location-Specific Dialogues
 Location	Character	Dialogue Type	Line
@@ -508,10 +488,6 @@ British Museum	Imre	Bitcoin Joke	“Ancient coins no Bitcoin… hug always valid
 •	Imre uses calm, surreal, slightly philosophical humor, including hugs, Bitcoin, and strategic advice.
 •	Lines cover default banter, Pub Crawl, drinking/blackout, mini-jokes, and football/food references.
  
-If you want, I can now expand this table to include minor locations like Brick Lane, Camden mini-games, and random side-quests, so you have every character spawn fully covered for the entire game.
-Do you want me to do that?
-Perfect 😄 Let’s expand the dialogue table to all minor locations, including Brick Lane, Camden mini-games, Thames, Greenwich, and any random side-quest spots, so Ede Udvaros and Imre Csinár have fully fleshed-out lines everywhere. I’ll include default banter, Pub Crawl, drinking/blackout, mini-jokes, and location-specific humor for each spot.
- 
 🎭 Minor Locations – Character Dialogues
 Location	Character	Dialogue Type	Line
 Brick Lane	Ede Udvaros	Default	“Wow-wow! Curry spicy like my heart… girls love spicy man… or man with pint, very nice!”
@@ -562,20 +538,6 @@ o	Ede: lines trigger Pub Crawl + drinking effects.
 o	Imre: lines trigger hug choice + charisma penalty.
 3.	Mini-Jokes & Location Flavor: Each line references landmarks, local food, or iconic London features.
 4.	Optional Extension: Can add extra Easter egg lines if the player completes mini-quests in that location (e.g., Curry Gauntlet in Brick Lane, rhythm game in Camden).
- 
-If you like, I can now combine this with the previous main location dialogues into one complete dialogue spreadsheet for the entire game, fully ready for implementation, including:
-•	Main locations
-•	Minor locations
-•	Special character interactions
-•	Pub Crawl / drinking / hug effects
-This would give you a playable, fully referenced dialogue system for both Ede Udvaros and Imre Csinár.
-Do you want me to do that next?
-Perfect 😄 Let’s combine everything into one complete dialogue system for Lost in London. This will cover:
-•	Main locations (Heathrow, Big Ben, Buckingham Palace, Chelsea, British Museum)
-•	Minor locations (Camden, Thames, Greenwich, Brick Lane)
-•	Special characters (Ede Udvaros and Imre Csinár)
-•	Interaction types: Default banter, Pub Crawl commentary, drinking/blackout, mini-jokes, football/food, hug-specific lines, and location-specific humor.
-I’ll structure it as a master table so it’s immediately usable for implementation.
  
 🎭 Complete Dialogue System – Ede Udvaros & Imre Csinár
 Location	Character	Dialogue Type	Line
